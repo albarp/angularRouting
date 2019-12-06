@@ -1,6 +1,6 @@
-<div *ngIf="hero">
-  <h2>{{hero.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{hero.id}}</div>
+<div *ngIf="hero$ | async as h">
+  <h2>{{h.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{h.id}}</div>
   <div>
     <label>name:
       <!-- <input [(ngModel)]="hero.name" placeholder="name"/> -->
