@@ -36,6 +36,14 @@ export class HeroDetailComponent implements OnInit {
       switchMap((params: ParamMap) =>
         this.service.getHero(+(params.get('id'))))
     );
+
+    // versione senza osservabile
+    // const id = this.route.snapshot.paramMap.get('id');
+    // this.hero$ = this.service.getHero(+id);
+  }
+
+  public gotoHeroes(hero: Hero) {
+    this.router.navigate(['/heroes', {id: hero.id, foo: 'foo'}]);
   }
 
 }
