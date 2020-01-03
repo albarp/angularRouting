@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { CrisisService } from '../crisis.service';
+import { Observable } from 'rxjs';
+import { Crisis } from '../crisis';
 
 @Component({
   selector: 'app-crisis-list',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CrisisListComponent implements OnInit {
 
-  constructor() { }
+  crises$: Observable<Crisis[]>;
+
+  constructor(private service: CrisisService) { }
 
   ngOnInit() {
+    this.crises$ = this.service.getCrises();
   }
 
 }
