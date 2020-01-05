@@ -1,3 +1,10 @@
-<p>
-  crisis-detail works!
-</p>
+<div *ngIf="crisis">
+  <h3>{{crisis.name}}</h3>
+  <div>
+    <label>Id: </label> {{crisis.id}}
+  </div>
+  <div>
+    <label>Name: </label>
+    <input [(ngModel)]="editName" placeholder="name">
+  </div>
+</div>
